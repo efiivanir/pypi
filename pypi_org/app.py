@@ -10,9 +10,15 @@ app = flask.Flask(__name__)
 def register_blueprints():
     from pypi_org.views import home_views
     from pypi_org.views import package_views
+    from pypi_org.views import cms_views
+
+ #   from pypi_org.views import account_views
 
     app.register_blueprint(home_views.blueprint)
     app.register_blueprint(package_views.blueprint)
+    app.register_blueprint(cms_views.blueprint)
+
+    #app.register_blueprint(account_views.blueprint)
 
 
 def main():
