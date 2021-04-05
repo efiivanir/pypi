@@ -9,7 +9,8 @@ factory = None
 def global_init(db_file: str):
     global factory
 
-
+    if factory:
+        return
 
     if not db_file or not db_file.strip():
         raise Exception("You must specify a db file.")
@@ -27,5 +28,3 @@ def global_init(db_file: str):
     import pypi_org.data.__all_models
 
     SqlAlchemyBase.metadata.create_all(engine)
- if factory:
-        return
