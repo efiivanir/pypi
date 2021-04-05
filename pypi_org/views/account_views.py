@@ -1,34 +1,49 @@
 import flask
 
+from pypi_org.infrastructure.view_modifiers import response
 
-blueprint = flask.Blueprint('acount', __name__, template_folder='templates')
+blueprint = flask.Blueprint('account', __name__, template_folder='templates')
 
 
-@blueprint.route('/acount')
+# ################### INDEX #################################
+
+
+@blueprint.route('/account')
+@response(template_file='account/index.html')
 def index():
-    return flask.render_template('account/index.html')
+    return {}
 
-            ## REGISTER
-@blueprint.route('/account/register', method = ['GET'])
+
+# ################### REGISTER #################################
+
+@blueprint.route('/account/register', methods=['GET'])
+@response(template_file='account/register.html')
 def register_get():
-    return flask.render_template('account/register.html')
+    return {}
 
-@blueprint.route('/account/register', method = ['PUT'])
-def register_put():
-    return flask.render_template('account/register.html')
 
-            ## LOGIN
-@blueprint.route('/account/login', method = ['GET'])
+@blueprint.route('/account/register', methods=['POST'])
+@response(template_file='account/register.html')
+def register_post():
+    return {}
+
+
+# ################### LOGIN #################################
+
+@blueprint.route('/account/login', methods=['GET'])
+@response(template_file='account/login.html')
 def login_get():
-    return flask.render_template('account/login.html')
+    return {}
 
-@blueprint.route('/account/login', method = ['PUT'])
-def login_put():
-    return flask.render_template('account/login.html')
 
-            ## LOGOUT
+@blueprint.route('/account/login', methods=['POST'])
+@response(template_file='account/login.html')
+def login_post():
+    return {}
+
+
+# ################### LOGOUT #################################
+
 @blueprint.route('/account/logout')
 def logout():
-    return flask.render_template('account/logout.html')
-
-
+    return {}
