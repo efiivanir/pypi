@@ -4,3 +4,4 @@ wheel
 setuptools
 black
 alembic
+ipython
